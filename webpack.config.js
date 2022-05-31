@@ -20,6 +20,11 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
+    externals: [
+      "react",
+      "react-dom",
+      "single-spa", /^@cancy-project\//
+    ],
     plugins: [
       new EnvironmentPlugin(['GITHUB_CLIENT_ID'])
     ],
